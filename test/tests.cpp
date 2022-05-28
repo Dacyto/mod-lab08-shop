@@ -96,5 +96,46 @@ TEST(TEST7, test7) {
     supermarket.startShopping();
 
     double result = supermarket.getPrej();
-    ASSERT_EQ(result, 0.3);
+    ASSERT_EQ(result, 0.25);
+}
+
+TEST(TEST8, test8) {
+    int cashboxes = 1;
+    int intensity = 17;
+    int speed = 17;
+    int averageProducts = 5;
+    int clients = 3;
+
+    Shop supermarket(cashboxes, intensity, speed, averageProducts, clients);
+    supermarket.startShopping();
+
+    double result = supermarket.getQ();
+    ASSERT_EQ(result, 0.75);
+}
+
+TEST(TEST9, test9) {
+    int cashboxes = 1;
+    int intensity = 17;
+    int speed = 17;
+    int averageProducts = 5;
+    int clients = 3;
+
+    Shop supermarket(cashboxes, intensity, speed, averageProducts, clients);
+    supermarket.startShopping();
+
+    double result = supermarket.getA();
+    ASSERT_EQ(result, 12.75);
+}
+
+TEST(TEST10, test10) {
+    int cashboxes = 1;
+    int intensity = 17;
+    int speed = 17;
+    int averageProducts = 5;
+    int clients = 3;
+
+    Shop supermarket(cashboxes, intensity, speed, averageProducts, clients);
+    supermarket.startShopping();
+
+    ASSERT_TRUE(supermarket.getAverageCashboxWorktime() > supermarket.getAverageClientTime());
 }
