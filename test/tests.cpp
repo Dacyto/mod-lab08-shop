@@ -30,7 +30,7 @@ TEST(TEST2, test2) {
     ASSERT_EQ(result, 3);
 }
 
-TEST(TEST2, test2) {
+TEST(TEST3, test3) {
     int cashboxes = 0;
     int intensity = 50;
     int speed = 15;
