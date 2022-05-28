@@ -72,7 +72,7 @@ TEST(TEST5, test5) {
 }
 
 TEST(TEST6, test6) {
-    int cashboxes = 3;
+    int cashboxes = 1;
     int intensity = 25;
     int speed = 25;
     int averageProducts = 12;
@@ -82,19 +82,19 @@ TEST(TEST6, test6) {
     supermarket.startShopping();
 
     double result = supermarket.getAverageCashboxDowntime();
-    ASSERT_EQ(result, 91.6667);
+    ASSERT_EQ(result, 0);
 }
 
 TEST(TEST7, test7) {
-    int cashboxes = 4;
-    int intensity = 13;
+    int cashboxes = 1;
+    int intensity = 17;
     int speed = 17;
-    int averageProducts = 8;
-    int clients = 10;
+    int averageProducts = 5;
+    int clients = 3;
 
     Shop supermarket(cashboxes, intensity, speed, averageProducts, clients);
     supermarket.startShopping();
 
     double result = supermarket.getPrej();
-    ASSERT_EQ(result, 3.2);
+    ASSERT_EQ(result, 0.3);
 }
