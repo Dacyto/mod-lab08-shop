@@ -131,7 +131,7 @@ TEST(TEST10, test10) {
     int cashboxes = 1;
     int intensity = 17;
     int speed = 17;
-    int averageProducts = 5;
+    int averageProducts = 7;
     int clients = 3;
 
     Shop supermarket(cashboxes, intensity, speed, averageProducts, clients);
