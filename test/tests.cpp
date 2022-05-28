@@ -41,5 +41,46 @@ TEST(TEST3, test3) {
     supermarket.startShopping();
 
     double result = supermarket.getAverageQueueLength();
-    ASSERT_EQ(result, 2);
+    ASSERT_EQ(result, 3);
+}
+
+TEST(TEST4, test4) {
+    int cashboxes = 2;
+    int intensity = 30;
+    int speed = 15;
+    int averageProducts = 7;
+    int clients = 10;
+
+    Shop supermarket(cashboxes, intensity, speed, averageProducts, clients);
+    supermarket.startShopping();
+
+    double result = supermarket.getAverageClientTime();
+    ASSERT_TRUE(result > 30);
+}
+
+TEST(TEST5, test5) {
+    int cashboxes = 3;
+    int intensity = 25;
+    int speed = 12;
+    int averageProducts = 5;
+    int clients = 3;
+
+    Shop supermarket(cashboxes, intensity, speed, averageProducts, clients);
+    supermarket.startShopping();
+
+    ASSERT_TRUE(supermarket.getAverageCashboxWorktime() > supermarket.getAverageClientTime());
+}
+
+TEST(TEST6, test6) {
+    int cashboxes = 3;
+    int intensity = 25;
+    int speed = 25;
+    int averageProducts = 12;
+    int clients = 9;
+
+    Shop supermarket(cashboxes, intensity, speed, averageProducts, clients);
+    supermarket.startShopping();
+
+    double result = supermarket.getAverageCashboxDowntime();
+    ASSERT_EQ(result, 0);
 }
