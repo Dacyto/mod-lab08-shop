@@ -31,20 +31,6 @@ TEST(TEST2, test2) {
 }
 
 TEST(TEST3, test3) {
-    int cashboxes = 0;
-    int intensity = 50;
-    int speed = 15;
-    int averageProducts = 5;
-    int clients = 6;
-
-    Shop supermarket(cashboxes, intensity, speed, averageProducts, clients);
-    supermarket.startShopping();
-
-    int result = supermarket.getAmountOfServedClients();
-    ASSERT_EQ(result, 0);
-}
-
-TEST(TEST4, test4) {
     int cashboxes = 2;
     int intensity = 20;
     int speed = 15;
