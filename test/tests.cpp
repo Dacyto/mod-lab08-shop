@@ -15,3 +15,31 @@ TEST(TEST1, test1) {
     int result = supermarket.getAmountOfNotServedClients();
     ASSERT_EQ(result, 0);
 }
+
+TEST(TEST2, test2) {
+    int cashboxes = 3;
+    int intensity = 50;
+    int speed = 15;
+    int averageProducts = 5;
+    int clients = 6;
+
+    Shop supermarket(cashboxes, intensity, speed, averageProducts, clients);
+    supermarket.startShopping();
+
+    int result = supermarket.getAmountOfServedClients();
+    ASSERT_EQ(result, 3);
+}
+
+TEST(TEST2, test2) {
+    int cashboxes = 0;
+    int intensity = 50;
+    int speed = 15;
+    int averageProducts = 5;
+    int clients = 6;
+
+    Shop supermarket(cashboxes, intensity, speed, averageProducts, clients);
+    supermarket.startShopping();
+
+    int result = supermarket.getAmountOfServedClients();
+    ASSERT_EQ(result, 0);
+}
