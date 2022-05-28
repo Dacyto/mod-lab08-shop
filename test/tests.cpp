@@ -27,7 +27,7 @@ TEST(TEST2, test2) {
     supermarket.startShopping();
 
     int result = supermarket.getAmountOfServedClients();
-    ASSERT_EQ(result, 3);
+    ASSERT_EQ(result, 6);
 }
 
 TEST(TEST3, test3) {
@@ -42,4 +42,18 @@ TEST(TEST3, test3) {
 
     int result = supermarket.getAmountOfServedClients();
     ASSERT_EQ(result, 0);
+}
+
+TEST(TEST4, test4) {
+    int cashboxes = 2;
+    int intensity = 20;
+    int speed = 15;
+    int averageProducts = 10;
+    int clients = 6;
+
+    Shop supermarket(cashboxes, intensity, speed, averageProducts, clients);
+    supermarket.startShopping();
+
+    double result = supermarket.getAverageQueueLength();
+    ASSERT_EQ(result, 2);
 }
