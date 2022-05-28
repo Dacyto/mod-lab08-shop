@@ -3,11 +3,11 @@
 
 int main()
 {
-    int cashboxes = 2;
-    int intensity = 30;
-    int speed = 10;
+    int cashboxes = 3;
+    int intensity = 40;
+    int speed = 15;
     int averageProducts = 3;
-    int clients = 4;
+    int clients = 3;
   
     Shop supermarket(cashboxes, intensity, speed, averageProducts, clients);
     supermarket.startShopping();
