@@ -68,7 +68,7 @@ TEST(TEST5, test5) {
     Shop supermarket(cashboxes, intensity, speed, averageProducts, clients);
     supermarket.startShopping();
 
-    ASSERT_TRUE(supermarket.getAverageCashboxWorktime() > supermarket.getAverageClientTime());
+    ASSERT_FALSE(supermarket.getAverageCashboxWorktime() > supermarket.getAverageClientTime());
 }
 
 TEST(TEST6, test6) {
@@ -82,5 +82,19 @@ TEST(TEST6, test6) {
     supermarket.startShopping();
 
     double result = supermarket.getAverageCashboxDowntime();
-    ASSERT_EQ(result, 0);
+    ASSERT_EQ(result, 91.6667);
+}
+
+TEST(TEST7, test7) {
+    int cashboxes = 4;
+    int intensity = 13;
+    int speed = 17;
+    int averageProducts = 8;
+    int clients = 10;
+
+    Shop supermarket(cashboxes, intensity, speed, averageProducts, clients);
+    supermarket.startShopping();
+
+    double result = supermarket.getPrej();
+    ASSERT_EQ(result, 3.2);
 }
